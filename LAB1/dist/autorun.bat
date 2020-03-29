@@ -1,0 +1,1 @@
+java -jar LAB1.jar
