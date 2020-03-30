@@ -34,7 +34,8 @@ public class TestLineChart extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        pData = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtData = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
@@ -56,8 +57,8 @@ public class TestLineChart extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jPanel1.setLayout(null);
+        pData.setBorder(javax.swing.BorderFactory.createTitledBorder("Details"));
+        pData.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
@@ -65,29 +66,23 @@ public class TestLineChart extends javax.swing.JFrame {
         txtData.setRows(5);
         jScrollPane1.setViewportView(txtData);
 
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 10, 162, 180);
+        pData.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, 170));
 
         jLabel1.setBackground(new java.awt.Color(51, 0, 255));
         jLabel1.setText("MinMaxValues:");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(240, 10, 73, 15);
+        pData.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, -1, -1));
 
         jLabel2.setText("MinValue:");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(240, 50, 47, 15);
+        pData.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, -1, -1));
 
         jLabel3.setText("MaxValue:");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(240, 90, 51, 15);
+        pData.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, -1, -1));
 
         lbMin.setBackground(new java.awt.Color(153, 255, 255));
-        jPanel1.add(lbMin);
-        lbMin.setBounds(300, 50, 100, 20);
+        pData.add(lbMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 100, 20));
 
         lbMax.setBackground(new java.awt.Color(0, 153, 255));
-        jPanel1.add(lbMax);
-        lbMax.setBounds(300, 90, 120, 20);
+        pData.add(lbMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 120, 20));
 
         btnGet.setText("Get Extreme Values");
         btnGet.addActionListener(new java.awt.event.ActionListener() {
@@ -95,54 +90,44 @@ public class TestLineChart extends javax.swing.JFrame {
                 btnGetActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGet);
-        btnGet.setBounds(230, 140, 130, 25);
+        pData.add(btnGet, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, -1, -1));
 
         jLabel4.setText("Setup Properties of the chart:");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(540, 10, 142, 15);
+        pData.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, -1));
 
         jLabel5.setText("minVal");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(480, 50, 32, 15);
+        pData.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, -1, -1));
 
         txtMin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMinActionPerformed(evt);
             }
         });
-        jPanel1.add(txtMin);
-        txtMin.setBounds(530, 40, 70, 30);
+        pData.add(txtMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 70, 30));
 
         jLabel6.setText("maxVal");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(480, 100, 36, 15);
-        jPanel1.add(txtMax);
-        txtMax.setBounds(530, 90, 70, 30);
+        pData.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 100, -1, -1));
+        pData.add(txtMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, 70, 30));
 
         jLabel7.setText("x-Lab");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(620, 40, 28, 15);
+        pData.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, -1, -1));
 
         jLabel8.setText("y-Lab");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(620, 90, 28, 15);
+        pData.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, -1, -1));
 
         txtXLab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtXLabActionPerformed(evt);
             }
         });
-        jPanel1.add(txtXLab);
-        txtXLab.setBounds(670, 40, 70, 30);
+        pData.add(txtXLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 40, 70, 30));
 
         txtYLab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtYLabActionPerformed(evt);
             }
         });
-        jPanel1.add(txtYLab);
-        txtYLab.setBounds(670, 90, 70, 30);
+        pData.add(txtYLab, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 90, 70, 30));
 
         btnDraw.setText("Draw Line Chart");
         btnDraw.addActionListener(new java.awt.event.ActionListener() {
@@ -150,21 +135,26 @@ public class TestLineChart extends javax.swing.JFrame {
                 btnDrawActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDraw);
-        btnDraw.setBounds(580, 150, 113, 25);
+        pData.add(btnDraw, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 783, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pData, javax.swing.GroupLayout.DEFAULT_SIZE, 835, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 313, Short.MAX_VALUE))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pData, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(279, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -254,7 +244,6 @@ public class TestLineChart extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDraw;
     private javax.swing.JButton btnGet;
@@ -266,10 +255,11 @@ public class TestLineChart extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbMax;
     private javax.swing.JLabel lbMin;
+    private javax.swing.JPanel pData;
     private javax.swing.JTextArea txtData;
     private javax.swing.JTextField txtMax;
     private javax.swing.JTextField txtMin;
