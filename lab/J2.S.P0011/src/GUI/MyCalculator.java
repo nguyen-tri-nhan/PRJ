@@ -36,7 +36,7 @@ public class MyCalculator extends javax.swing.JFrame {
         jDisplay.setEditable(false);
         jDisplay.setText("0");
     }
-    public boolean checkDeepMemory(double deepMemory){
+    public boolean checkDeepMemory(){
         if (deepMemory != 0) return true;
         return false;
     }
@@ -59,13 +59,14 @@ public class MyCalculator extends javax.swing.JFrame {
     }
     
     public void pressNumber(int value) {
-        if (checkOp() || checkText()){
+        if (checkOp() || checkText() || !checkDeepMemory() ){
             Change = true;
             Current = Current*10+value;
             display(Current);
         } else {
             Memory = Memory*10+value;
             display(Memory);
+            //Memory = Current;
         }
         System.out.println("Current: " + Current);
         System.out.println("Memory: " + Memory);
@@ -356,7 +357,7 @@ public class MyCalculator extends javax.swing.JFrame {
 
     private void jSumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSumActionPerformed
         // TODO add your handling code here:
-        if (checkDeepMemory(deepMemory)){
+        if (checkDeepMemory()){
             Memory = deepMemory;
         }
         operator = 1;
@@ -382,7 +383,7 @@ public class MyCalculator extends javax.swing.JFrame {
 
     private void jSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubActionPerformed
         // TODO add your handling code here:
-        if (checkDeepMemory(deepMemory)){
+        if (checkDeepMemory()){
             Memory = deepMemory;
         }
         operator = 2;
@@ -408,10 +409,11 @@ public class MyCalculator extends javax.swing.JFrame {
 
     private void jMulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMulActionPerformed
         // TODO add your handling code here:
-        if (checkDeepMemory(deepMemory)){
+        //Memory = 1;
+        if (checkDeepMemory()){
             Memory = deepMemory;
         }
-        operator = 6;
+        operator = 3;
         jDisplay.setText(String.valueOf(calculator.cal(Memory, Current, operator)));
         Memory = Double.parseDouble(jDisplay.getText());
         Current = 0;
@@ -424,7 +426,7 @@ public class MyCalculator extends javax.swing.JFrame {
 
     private void jDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDivActionPerformed
         // TODO add your handling code here:
-        if (checkDeepMemory(deepMemory)){
+        if (checkDeepMemory()){
             Memory = deepMemory;
         }
         operator = 4;
@@ -439,6 +441,8 @@ public class MyCalculator extends javax.swing.JFrame {
         Memory = 0;
         Current = 0;
         deepMemory = 0;
+        operator = 0;
+        calculator.setLastOperator(0);
     }//GEN-LAST:event_jClearActionPerformed
 
     private void jDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDisplayActionPerformed
@@ -449,12 +453,14 @@ public class MyCalculator extends javax.swing.JFrame {
         // TODO add your handling code here:
         operator = 0;
         jDisplay.setText(String.valueOf(calculator.cal(Memory, Current, operator)));
-        Memory = Double.parseDouble(jDisplay.getText());
+//        Memory = Double.parseDouble(jDisplay.getText());
         Current = 0;
-//        operator = 0;
+        
 //        deepMemory = Memory;
 //        Memory = 0;
 //        jDisplay.setText(String.valueOf(deepMemory));
+//        System.out.println("Mem: " + Memory);
+//        System.out.println("Deep Mem "+ deepMemory);
     }//GEN-LAST:event_jEqualActionPerformed
 
     /**
