@@ -5,13 +5,12 @@
  */
 package GUI;
 
-import javax.swing.*;
 import Logic.Calculator;
 import java.math.BigDecimal;
 
 /**
  *
- * @author lab003
+ * @author nguyentrinhan.dev
  */
 public class SimpleCalculator extends javax.swing.JFrame {
 
@@ -484,12 +483,14 @@ public class SimpleCalculator extends javax.swing.JFrame {
         // TODO add your handling code here:
         setText(c.Calculate(getText(), "="));
         btndot.setEnabled(true);
+        if (txtDisplay.getText().equals("infinity")) {
+            txtDisplay.setText("MathError");
+        }
     }//GEN-LAST:event_btnEqualActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
         setText(c.ButtonClear());
-        btndot.setEnabled(true);
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnswapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnswapActionPerformed
@@ -499,8 +500,7 @@ public class SimpleCalculator extends javax.swing.JFrame {
 
     private void btndotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndotActionPerformed
         // TODO add your handling code here:
-        setText(c.addDigit(getText(), "."));
-        btndot.setEnabled(false);
+        setText(c.processDot(getText()));
     }//GEN-LAST:event_btndotActionPerformed
 
     private void btnDiv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiv1ActionPerformed
@@ -535,6 +535,7 @@ public class SimpleCalculator extends javax.swing.JFrame {
             setText(String.valueOf(Math.sqrt(Double.parseDouble(getText()))));
         } else {
             setText("Error");
+            c.setNewNumber(true);
         }
     }//GEN-LAST:event_btnSqrtActionPerformed
 
