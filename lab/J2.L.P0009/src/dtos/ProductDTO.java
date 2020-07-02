@@ -5,23 +5,28 @@
  */
 package dtos;
 
+import java.util.Vector;
+
 /**
  *
  * @author nguyentrinhan2000
  */
 public class ProductDTO {
     String productID, productname;
-    int price, quantity;
+    int price, quantity, categoryID;
 
     public ProductDTO() {
     }
 
-    public ProductDTO(String productID, String productname, int price, int quantity) {
+    public ProductDTO(String productID, String productname, int categoryID, int price, int quantity) {
         this.productID = productID;
         this.productname = productname;
+        this.categoryID = categoryID;
         this.price = price;
         this.quantity = quantity;
     }
+
+    
 
     public String getProductID() {
         return productID;
@@ -54,5 +59,22 @@ public class ProductDTO {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
+
+    public int getCategoryID() {
+        return categoryID;
+    }
+
+    public void setCategoryID(int categoryID) {
+        this.categoryID = categoryID;
+    }
+    public Vector toVector(){
+        Vector v = new Vector();
+
+        v.add(productID);
+        v.add(productname);
+        v.add(price);
+        v.add(quantity);
+        v.add(categoryID);
+        return v;
+    }
 }

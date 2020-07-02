@@ -10,21 +10,22 @@ package dtos;
  * @author nguyentrinhan2000
  */
 public class CategoryDTO {
-    String categoryID, categoryname;
+    int  categoryID;
+    String categoryname;
 
     public CategoryDTO() {
     }
 
-    public CategoryDTO(String categoryID, String categoryname) {
+    public CategoryDTO(int categoryID, String categoryname) {
         this.categoryID = categoryID;
         this.categoryname = categoryname;
     }
 
-    public String getCategoryID() {
+    public int getCategoryID() {
         return categoryID;
     }
 
-    public void setCategoryID(String categoryID) {
+    public void setCategoryID(int categoryID) {
         this.categoryID = categoryID;
     }
 
@@ -34,6 +35,11 @@ public class CategoryDTO {
 
     public void setCategoryname(String categoryname) {
         this.categoryname = categoryname;
+    }
+
+    @Override
+    public String toString() {
+        return categoryname;
     }
     
 }

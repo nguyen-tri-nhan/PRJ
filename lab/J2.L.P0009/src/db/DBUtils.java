@@ -1,20 +1,19 @@
 package db;
 
-import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
  *
- * @author FPT M7
+ * @author nguyentrinhan2000
  */
-public class DBUtils implements Serializable{
+public class DBUtils{
     public static Connection getConnection() throws ClassNotFoundException, SQLException{
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String url = "jdbc:sqlserver://localhost:1433;databaseName=ProductManagement";
-            Connection con = DriverManager.getConnection(url,"new","123456789");
+            Connection con = DriverManager.getConnection(url,"sa","123456789");
             return con;
         } catch (ClassNotFoundException ex) {
             ex.printStackTrace();
